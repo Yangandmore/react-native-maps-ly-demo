@@ -48,6 +48,9 @@ export default Home = (props) => {
 			name: '动画定位'
 		},
 		{
+			name: '变动状态'
+		},
+		{
 			name: '点标记',
 			mark: '标记'
 		},

@@ -23,7 +23,7 @@ export default ({ navigation, route }) => {
 			<GAMapView 
 				ref={mapRefs}
 				style={{width: '100%', height: '70%'}}
-				onAnimateOver={(d) => {
+				onAnimateComplete={(d) => {
 					const { nativeEvent: data } = d;
 					console.log(data);
 				}}
