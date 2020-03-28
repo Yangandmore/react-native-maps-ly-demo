@@ -8,6 +8,8 @@ import Gestures from './gestures';
 import Gestures2 from './gestures2';
 import Region from './region';
 import ScreenShot from './screenShot';
+import Event from './event';
+import Animate from './animate';
 import Marker from './marker';
 
 export default {
@@ -21,5 +23,7 @@ export default {
 	手势设置: Gestures2,
 	区域控制: Region,
 	截图功能: ScreenShot,
+	点击效果: Event,
+	动画定位: Animate,
 	点标记: Marker,
 };

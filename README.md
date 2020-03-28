@@ -18,16 +18,47 @@
 * ......
 
 # 安装
-`
-	npm i react-native-maps-ly
-`
+```
+npm i react-native-maps-ly
 
-# 使用前
+// android无需其他配置
+// 进入ios文件夹
+cd ios
+pod install
+```
 
+# 获取高德Key
 
+### Android
+* [获取高德Key](https://lbs.amap.com/api/android-sdk/guide/create-project/get-key)
+
+* 修改`AndroidManifest.xml`文件，添加Key
+	```xml
+	<application>
+     	<meta-data
+       android:name="com.amap.api.v2.apikey"
+       android:value="...Key" />
+  </application>
+	```
+
+### ios
+* [获取高德 Key](https://lbs.amap.com/api/ios-sdk/guide/create-project/get-key)。
+
+* 在`AppDelegate.m`文件中设置Key
+	```java
+	[AMapServices sharedServices].apiKey = @"...Key";
+	```
 
 # 开始使用
+### 导入地图基础模块
+```js
+import { GAMapView } from 'react-native-maps-ly';
+```
 
+### 添加地图
+```js
+<GAMapView style={{flex: 1}} />
+```
 
 
 

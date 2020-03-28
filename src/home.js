@@ -3,15 +3,16 @@ import {
 	View,
 	ScrollView
 } from 'react-native';
-import { ListItem } from 'react-native-elements'
+import { ListItem, Text } from 'react-native-elements'
 
-const Home = (props) => {
+export default Home = (props) => {
 
 	const { navigation } = props;
 
 	const list = [
 		{
-			name: '显示地图'
+			name: '显示地图',
+			mark: '基础地图'
 		},
 		{
 			name: '蓝点设置'
@@ -41,26 +42,48 @@ const Home = (props) => {
 			name: '截图功能'
 		},
 		{
-			name: '点标记'
+			name: '点击效果'
+		},
+		{
+			name: '动画定位'
+		},
+		{
+			name: '点标记',
+			mark: '标记'
 		},
 	];
 
 	return (
 		<ScrollView style={{ flex: 1 }}>
 		{
-			list.map((c, i) => (
-				<ListItem 
-					key={i}
-					title={c.name}
-					topDivider
-					bottomDivider
-					onPress={() => {
-						navigation.navigate(c.name);
-					}}/>
-			))
+			list.map((c, i) => {
+				console.log(c.mark);
+				return c.mark ? (
+					<View 
+						style={{flexDirection: 'column'}}
+						key={i}>
+						<Text h4
+							style={{margin: 10}}>{c.mark}</Text>
+						<ListItem 
+							title={c.name}
+							topDivider
+							bottomDivider
+							onPress={() => {
+								navigation.navigate(c.name);
+							}}/>				
+					</View>
+				) : (
+					<ListItem 
+						key={i}
+						title={c.name}
+						topDivider
+						bottomDivider
+						onPress={() => {
+							navigation.navigate(c.name);
+						}}/>
+				);
+			})
 		}
 		</ScrollView>
 	);
 };
-
-export default Home;
